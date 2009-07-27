@@ -13,11 +13,17 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = true
 end
 
-#desc 'Generate documentation for the marshalize plugin.'
-#Rake::RDocTask.new(:rdoc) do |rdoc|
-  #rdoc.rdoc_dir = 'rdoc'
-  #rdoc.title    = 'Marshalize'
-  #rdoc.options '--title' << 'Marshalize -- serialization using Marshal' << '-FNS' << '-w 2' << '-a'
-  #rdoc.rdoc_files.include('README')
-  #rdoc.rdoc_files.include('lib/**/*.rb')
-#end
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "marshalize"
+    gemspec.summary     = %q{Marshalize is a Rails plugin enabling ActiveRecord attributes serialization using the Marshal binary converter library.}
+    gemspec.description = %q{This Rails plugin provides serialization using Marshal in the same way Rails provides builtin serialization using YAML. You can register any kind object (not just arrays and hashes…). Be aware that Marshal defines a binary format, which may change in incoming Ruby releases and is currently not portable outside the Ruby scripting world. For a portable yet slower alternatives, you may try JSON or YML serializers.}
+    gemspec.email       = "jd@vauguet.fr"
+    gemspec.homepage    = "http://github.com/chikamichi/marshalize"
+    gemspec.authors =   ["Jean-Denis Vauguet"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+end
+
