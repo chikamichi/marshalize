@@ -26,9 +26,9 @@ You can register any kind object (not just arrays and hashes...). Be aware that 
 
 === recommended -- as a local gem dependency:
 
-In your <tt>environment.rb</tt>, add the following line:
+In your <tt>environment.rb</tt>, inside the <tt>Rails::Initializer</tt>, add the following line:
   
-  config.gem "chikamichi-marshalize", :lib =>'marshalize', :source =>'http://gems.github.com'
+  config.gem "chikamichi-marshalize", :lib => 'marshalize', :source => 'http://gems.github.com'
 
 Then run <tt>rake gems:install</tt> to fetch the plugin in.
 
@@ -50,7 +50,7 @@ Then:
 
 == TODO
 
-* some +super+ stuff
+* some +super+ stuff to avoid harsh overriding of ActiveRecord internals
 * manage +blobs+, not just +text+ rows (buffer limitations)
 * +rake+ tasks to manage marshalized data recovering in case Marshal went astray (say, a new version breaking things down?) 
 
