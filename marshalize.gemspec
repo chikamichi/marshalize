@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.has_rdoc          = true
   s.homepage          = %q{http://github.com/chikamichi/marshalize}
   s.rdoc_options      = ["--inline-source", "--charset=UTF-8"]
-  s.extra_rdoc_files  = ["README.md", "COPYING", "ChangeLog.md"]
+  s.extra_rdoc_files  = ["README.rdoc", "COPYING", "ChangeLog.rdoc"]
   s.rubygems_version  = %q{1.3.1}
   s.test_files        = ["test/marshalize_test.rb"]
-  spec.rdoc_options << '--title' << 'Marshalize -- serialization using Marshal' << '-FNS' << '-w 2' << '-a'
+  s.rdoc_options << '--title' << 'Marshalize -- serialization using Marshal' << '-FNS' << '-w 2' << '-a'
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
