@@ -4,7 +4,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = %q{marshalize}
-  s.version = "1.0.1"
+  s.version = "1.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors           = "Jean-Denis Vauguet"
@@ -12,7 +12,17 @@ Gem::Specification.new do |s|
   s.summary           = %q{Marshalize is a Rails plugin enabling ActiveRecord attributes serialization using the Marshal binary converter library.}
   s.description       = %q{Grit is a Ruby library for extracting information from a git repository in an object oriented manner.}
   s.email             = %q{jd@vauguet.fr}
-  s.files             = FileList['[A-Z]*', 'rails/**/*.rb', 'lib/**/*.rb', 'test/**/*', 'generators/**/*'].to_a
+  #s.files             = FileList['[A-Z]*', 'rails/**/*.rb', 'lib/**/*.rb', 'test/**/*', 'generators/**/*'].to_a
+  s.files             =  ["README.rdoc",
+                          "ChangeLog.rdoc",
+                          "Rakefile", 
+                          "COPYING", 
+                          "rails/init.rb", 
+                          "lib/marshalize.rb", 
+                          "test/schema.rb", 
+                          "test/marshalize_test.rb", 
+                          "test/test_helper.rb", 
+                          "test/database.yml"]
   s.has_rdoc          = true
   s.homepage          = %q{http://github.com/chikamichi/marshalize}
   s.rdoc_options      = ["--inline-source", "--charset=UTF-8"]

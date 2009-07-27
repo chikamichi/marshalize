@@ -13,11 +13,11 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = true
 end
 
-desc 'Generate documentation for the marshalize plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Marshalize'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+#desc 'Generate documentation for the marshalize plugin.'
+#Rake::RDocTask.new(:rdoc) do |rdoc|
+  #rdoc.rdoc_dir = 'rdoc'
+  #rdoc.title    = 'Marshalize'
+  #rdoc.options '--title' << 'Marshalize -- serialization using Marshal' << '-FNS' << '-w 2' << '-a'
+  #rdoc.rdoc_files.include('README')
+  #rdoc.rdoc_files.include('lib/**/*.rb')
+#end
