@@ -57,8 +57,9 @@ A very simple test case is provided as <tt>test/marshalize_test.rb</tt>. Run <tt
 
 == TODO
 
+* make base64 encoding optionnal for binary attributes (blob), mandatory for text attributes
 * some +super+ stuff to avoid harsh overriding of ActiveRecord internals
-* manage +blobs+, not just +text+ rows (buffer limitations)
+* a method to fetch raw binary and/or encoded data from the db, bypassing unmarshalizing?
 * +rake+ tasks to manage marshalized data recovering in case Marshal went astray (say, a new version breaking things down?) 
 
 == License
