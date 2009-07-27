@@ -26,11 +26,11 @@ You can register any kind object (not just arrays and hashes...). Be aware that 
 
 === recommended -- as a local gem dependency:
 
-In your +environment.rb+, add the following line:
+In your <tt>environment.rb</tt>, add the following line:
   
   config.gem "chikamichi-marshalize", :lib =>'marshalize', :source =>'http://gems.github.com'
 
-Then run +rake gems:install+ to fetch the plugin in.
+Then run <tt>rake gems:install</tt> to fetch the plugin in.
 
 === as a plugin:
 
