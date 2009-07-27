@@ -10,6 +10,10 @@ You can register any kind object (not just arrays and hashes...). Be aware that 
 
 == Example
 
+Marshalize currently supports text rows to store binary Marshal data. This limitation should not last long and blob rows are on the way.
+
+  $ script/generate scaffold Robot name:string parameters:text features:text status:text
+
   class Robot < ActiveRecord::Base
     
     marshalize :parameters               # The "parameters" attribute will be saved as binary data
@@ -47,6 +51,10 @@ If necessary:
 Then:
 
   sudo gem install chikamichi-marshalize
+
+== Testing
+
+A very simple test case is provided as <tt>test/marshalize_test.rb</tt>. Run <tt>rake test</tt>.
 
 == TODO
 

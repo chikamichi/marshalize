@@ -1,6 +1,10 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+#require File.dirname(__FILE__) + '/test_helper.rb'
 
 class ExtendActiveRecordTest < Test::Unit::TestCase
+
+  require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+  ActiveRecord::Base.establish_connection(config[db_adapter])
+  load(File.dirname(__FILE__) + "/schema.rb")
 
   class Bird < ActiveRecord::Base
     marshalize :songs
@@ -10,7 +14,7 @@ class ExtendActiveRecordTest < Test::Unit::TestCase
 
   def test_marshalize_the_songs_attribute
 
-    load_schema
+    #load_schema
     
 
     test_songs = {'Il fait beau' => 'texte de la chanson...', 'Perche sur une branche' => 'piou piou piou!'}
