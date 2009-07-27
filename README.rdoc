@@ -24,26 +24,36 @@ You can register any kind object (not just arrays and hashes...). Be aware that 
 
 == Installation
 
+=== recommended -- as a local gem dependency:
+
+In your +environment.rb+, add the following line:
+  
+  config.gem "chikamichi-marshalize", :lib =>'marshalize', :source =>'http://gems.github.com'
+
+Then run +rake gems:install+ to fetch the plugin in.
+
 === as a plugin:
 
 In your Rails application root directory:
 
   script/plugin install git://github.com/chikamichi/marshalize.git
 
-=== as a gem:
+=== as an standalone gem:
 
 If necessary:
+  
   gem sources -a http://gems.github.com
 
 Then:
+
   sudo gem install chikamichi-marshalize
 
 == TODO
 
-* +super+ stuff
-* manage blobs, not just text field (buffer limitations)
-* rake tasks to manage marshalized data recovering in case Marshal went astray (say, a new version breaking things down) 
+* some +super+ stuff
+* manage +blobs+, not just +text+ rows (buffer limitations)
+* +rake+ tasks to manage marshalized data recovering in case Marshal went astray (say, a new version breaking things down?) 
 
 == License
 
-Released under the WTFPL (http://sam.zoy.org/wtfpl/COPYING)
+Released under the WTFPL (see COPYING).
