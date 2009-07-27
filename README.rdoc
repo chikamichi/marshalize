@@ -32,9 +32,11 @@ In your Rails application root directory:
 
 === as a gem:
 
-Not yet!
+If necessary:
+  gem sources -a http://gems.github.com
 
-No rake task needed.
+Then:
+  sudo gem install chikamichi-marshalize
 
 == TODO
 
