@@ -1,18 +1,17 @@
 = Marshalize
 
-This Rails plugin provides serialization using Marshal[http://ruby-doc.org/core/classes/Marshal.html] in the same way Rails provides builtin serialization using YAML. In a model, just do
-  class Robot < ActiveRecord::Base
-    marshalize :features
+This Rails plugin provides *serialization* using *Marshal*[http://ruby-doc.org/core/classes/Marshal.html] in the same way Rails provides builtin serialization using YAML. In a model, just do
+  class YourModel < ActiveRecord::Base
+    marshalize :attribute
   end
-and your app will automagically handle the +features+ attribute using Marshal, dumping when saving to the database, loading when fetching from it.
+and your app will automagically handle the +attribute+ using the *binary* converter Marshal: dumping when saving to the database, loading when fetching from it.
 
-You can register any kind object (not just arrays and hashes...). Be aware that Marshal defines a binary format, which may change in incoming Ruby releases and is currently not portable outside the Ruby scripting world. For a portable yet slower alternatives, you may try JSON or YML serializers.
+You can store any kind object (not _just_ arrays and hashes...). Be aware that Marshal defines a binary format which may change in incoming Ruby releases and is currently not portable outside the Ruby world. For portable yet slower alternatives, you may try {JSON or XML serializers}[http://api.rubyonrails.org/classes/ActiveRecord/Serialization.html].
 
 == Example
 
-Marshalize currently supports text rows to store binary Marshal data. This limitation should not last long and blob rows are on the way.
-
   $ script/generate scaffold Robot name:string parameters:text features:text status:text
+
 
   class Robot < ActiveRecord::Base
     
